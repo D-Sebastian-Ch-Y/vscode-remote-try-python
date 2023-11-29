@@ -21,6 +21,7 @@ def determinar_ganador(jugador, oponente):
 
 def jugar():
     puntos_jugador = 0
+    num_rondas = 0
 
     while True:
         print("\nElige: piedra, papel o tijeras. Para salir, escribe 'salir'.")
@@ -30,6 +31,7 @@ def jugar():
             opcion_oponente = obtener_opcion_aleatoria()
             resultado = determinar_ganador(eleccion, opcion_oponente)
             print(f"\nElegiste: {eleccion}. El oponente eligió: {opcion_oponente}. {resultado}")
+            num_rondas += 1
 
             if resultado == "¡Has ganado!":
                 puntos_jugador += 1
@@ -42,7 +44,7 @@ def jugar():
         else:
             print("Opción no válida. Por favor, elige piedra, papel o tijeras.")
 
-    print("\n¡Gracias por jugar!")
+    print(f"\n¡Gracias por jugar {num_rondas} ronda(s)!")
     print(f"Tu puntuación final es: {puntos_jugador}")
 
 if __name__ == "__main__":
